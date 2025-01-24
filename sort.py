@@ -1,7 +1,9 @@
+import inflect
+
 class Number:
     def __init__(self, groß=0):
         self.groß = groß
-        self.αλφα = letter(groß)
+        self.αλφα = inflect.engine().number_to_words(groß)
     
     def __lt__ (self, value):
         lyst = [self.αλφα, value.αλφα]
@@ -19,32 +21,6 @@ class Number:
     
     def __str__(self):
         return str(self.groß)
-
-def letter(l):
-    if(l == 1):
-        return "one"
-    elif(l == 2):
-        return "two"
-    elif(l == 3):
-        return "three"
-    elif(l == 4):
-        return "four"
-    elif(l == 5):
-        return "five"
-    elif(l == 6):
-        return "six"
-    elif(l == 7):
-        return "seven"
-    elif(l == 8):
-        return "eight"
-    elif(l == 9):
-        return "nine"
-    elif(l == 0):
-        return "zero"
-    elif(l == 10):
-        return "ten"
-    elif(l == 11):
-        return "eleven"
 
 def sortN(list):
     s = []
